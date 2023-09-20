@@ -14,9 +14,9 @@ texto.innerHTML = "A bolinha está fora.";
 
 // Vice-lider
 function vice() {
-const a = document.querySelector('#viceA').value;
-const b = document.querySelector('#viceB').value;
-const c = document.querySelector('#viceC').value;
+const a = parseInt(document.querySelector('#viceA').value);
+const b = parseInt(document.querySelector('#viceB').value);
+const c = parseInt(document.querySelector('#viceC').value);
 const texto = document.querySelector('h5');
 
 valor = a, b, c;  
@@ -26,7 +26,7 @@ texto.innerHTML = "O vice é A.";
 else if ( (b > a && b < c) || (b > c && b < a) ){
 texto.innerHTML = "O vice é B.";
 }
-else{
+else {
 texto.innerHTML = "O vice é C.";
 }
 }
