@@ -1,47 +1,54 @@
+// Tira-teima 
 function tira() {
    const x = document.querySelector('#larg').value;
    const y = document.querySelector('#comp').value;
-// Tira-teima 
+   const texto = document.querySelector('h4');
 
 if (x >= 0 && x <= 432 && y >= 0 && y <= 468) { 
-alert("A bolinha está dentro.\n");
+texto.innerHTML = "A bolinha está dentro.";
 } 
 else {
-alert("A bolinha está fora.\n");
+texto.innerHTML = "A bolinha está fora.";
+ }
 }
 
-}
+// Vice-lider
+function vice() {
+const a = document.querySelector('#viceA').value;
+const b = document.querySelector('#viceB').value;
+const c = document.querySelector('#viceC').value;
+const texto = document.querySelector('h5');
 
-function zerinho(){
-// Zerinho ou Um
-valor = "a", "b", "c";
-if (a===b && c!==b){
-   alert("C\n");
+valor = a, b, c;  
+if ( (a > b && a < c) || (a > c && a < b) ){
+texto.innerHTML = "O vice é A.";
 }
-else if (a===c && b!==c){
-   alert("B\n");
-}
-else if (b===c && a!==c){
-   alert("A\n");
+else if ( (b > a && b < c) || (b > c && b < a) ){
+texto.innerHTML = "O vice é B.";
 }
 else{
-   alert("*\n");
+texto.innerHTML = "O vice é C.";
 }
 }
 
-function vice() {
-const texto = document.querySelector("h1");
-const valor = document.querySelector('#valor').value;
-// Vice-lider
-   valor = a, b, c;  
-   if ( (a > b && a < c) || (a > c && a < b) ){
-       vice = a;
+// Zerinho ou Um
+function zerinho(){
+   const a = parseInt(document.querySelector('#a').value);
+   const b = parseInt(document.querySelector('#b').value);
+   const c = parseInt(document.querySelector('#c').value);
+   const texto = document.querySelector('h6');
+
+
+if ((a != b) && (a != c)) {
+   texto.innerHTML = 'A';
 }
-   else if ( (b > a && b < c) || (b > c && b < a) ){
-       vice = b;
+else if ((b != a) && (b != c)) {
+   texto.innerHTML = 'B';
 }
-   else{
-       vice = c;
+else if ((c != a) && (c != b)) {
+   texto.innerHTML = 'C';
 }
-texto.innerHTML = "O vice é " + valor;
+else {
+   texto.innerHTML = '*';
+}
 }
